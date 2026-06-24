@@ -31,14 +31,6 @@ function Buildings() {
     image: window.__resources && window.__resources.projSantaCruz || '../assets/proj-santa-cruz.png',
     imagePosition: 'left top'
   }, {
-    name: 'Edifício Lunabel',
-    city: 'Novo Gama – GO',
-    floors: '04 pavimentos',
-    area: '2.137,17 m²',
-    system: 'Concreto Armado',
-    image: window.__resources && window.__resources.projLunabel || '../assets/proj-lunabel.png',
-    imagePosition: 'left top'
-  }, {
     name: 'Edifício Jardim Paraíso',
     city: 'Feira de Santana – BA',
     floors: 'Térreo + 9 pavimentos',
