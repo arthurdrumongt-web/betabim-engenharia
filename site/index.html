@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BETABIM Engenharia — Projetos Estruturais em Parede de Concreto e Concreto Armado</title>
+<meta name="description" content="Projetos estruturais em parede de concreto e concreto armado para construtoras. Mais de 35 edifícios calculados no Brasil. Análise técnica preliminar em 48h." />
+<link rel="icon" href="../assets/betabim-mark.png" />
+<meta name="ext-resource-dependency" content="../assets/betabim-logo-white.png" data-resource-id="logoWhite" />
+<meta name="ext-resource-dependency" content="../assets/hero-bim-render.png" data-resource-id="heroBimRender" />
+<meta name="ext-resource-dependency" content="../assets/proj-prive-garden.png" data-resource-id="projPriveGarden" />
+<meta name="ext-resource-dependency" content="../assets/proj-conceicao-ii.png" data-resource-id="projConceicaoII" />
+<meta name="ext-resource-dependency" content="../assets/proj-guarapuava.png" data-resource-id="projGuarapuava" />
+<meta name="ext-resource-dependency" content="../assets/orlando.png" data-resource-id="orlandoPhoto" />
+<meta name="ext-resource-dependency" content="../assets/proj-santa-cruz.png" data-resource-id="projSantaCruz" />
+<meta name="ext-resource-dependency" content="../assets/proj-lunabel.png" data-resource-id="projLunabel" />
+<meta name="ext-resource-dependency" content="../assets/proj-jardim-paraiso.png" data-resource-id="projJardimParaiso" />
+<meta name="ext-resource-dependency" content="../assets/proj-paqueta.png" data-resource-id="projPaqueta" />
+<link rel="stylesheet" href="site.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  /* ---- Responsive ---- */
+  .nav-link { position: relative; transition: color 200ms var(--ease); }
+  .nav-link:hover { color: #fff; }
+  .nav-link::after { content: ""; position: absolute; left: 0; bottom: -6px; height: 1px; width: 0; background: var(--blue-bright); transition: width 220ms var(--ease); }
+  .nav-link:hover::after { width: 100%; }
+  .foot-link { transition: color 180ms var(--ease), padding-left 180ms var(--ease); }
+  .foot-link:hover { color: var(--blue-bright); padding-left: 4px; }
+
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .hero-visual { display: none; }
+    .numbers-grid { grid-template-columns: 1fr 1fr !important; gap: 12px 0 !important; }
+    .num-cell { border-left: none !important; padding: 18px 0 !important; }
+    .diff-grid, .pill-grid, .build-grid, .why-grid { grid-template-columns: 1fr 1fr !important; }
+    .eng-grid, .contact-grid, .offer-grid { grid-template-columns: 1fr !important; }
+    .eng-photo, .contact-intro { position: static !important; }
+    .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  }
+  @media (max-width: 720px) {
+    .nav-desktop, .header-cta { display: none !important; }
+    .nav-toggle { display: inline-flex !important; }
+    .diff-grid, .pill-grid, .build-grid, .why-grid, .footer-grid, .form-row { grid-template-columns: 1fr !important; }
+    .section { padding: 64px 0 !important; }
+    .numbers-grid { grid-template-columns: 1fr 1fr !important; }
+  }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#1B171B">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#1B171B"/>
+    <polygon points="600,300 720,420 480,420" fill="#5D8FCD"/>
+    <rect x="470" y="452" width="260" height="16" rx="3" fill="#ffffff"/>
+    <rect x="520" y="486" width="160" height="10" rx="3" fill="#6D7075"/>
+  </svg>
+</template>
+<div id="root"></div>
+<script type="text/babel" src="SiteUI.jsx"></script>
+<script type="text/babel" src="SiteHeader.jsx"></script>
+<script type="text/babel" src="SiteHero.jsx"></script>
+<script type="text/babel" src="Sections1.jsx"></script>
+<script type="text/babel" src="Sections2.jsx"></script>
+<script type="text/babel" src="Sections3.jsx"></script>
+<script type="text/babel" src="Sections4.jsx"></script>
+<script type="text/babel" src="SiteFooter.jsx"></script>
+<script type="text/babel">
+  function App() {
+    const refs = {
+      'Diferenciais': React.useRef(),
+      'Edifícios': React.useRef(),
+      'Parede de Concreto': React.useRef(),
+      'Engenheiro': React.useRef(),
+      'Contato': React.useRef(),
+    };
+    const onNav = (label) => {
+      const r = refs[label];
+      if (r && r.current) {
+        const top = r.current.getBoundingClientRect().top + window.pageYOffset - 60;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    };
+    return (
+      <div>
+        <Header onNav={onNav} />
+        <Hero onNav={onNav} />
+        <Numbers />
+        <div ref={refs['Diferenciais']}><Differentials /></div>
+        <div ref={refs['Edifícios']}><Buildings /></div>
+        <div ref={refs['Parede de Concreto']}><WallSystem /></div>
+        <div ref={refs['Engenheiro']}><Engineer /></div>
+        <WhyBetabim />
+        <Offer onNav={onNav} />
+        <div ref={refs['Contato']}><Contact /></div>
+        <Footer onNav={onNav} />
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
