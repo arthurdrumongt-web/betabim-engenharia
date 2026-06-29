@@ -121,13 +121,27 @@ function Footer({
       fontSize: 13,
       color: 'var(--on-dark-faint)'
     }
-  }, "\xA9 BETABIM Engenharia e Consultoria T\xE9cnica Ltda"), /*#__PURE__*/React.createElement("p", {
+  }, "\xA9 BETABIM Engenharia e Consultoria T\xE9cnica Ltda"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/politica-de-privacidade",
+    className: "foot-link",
+    style: {
+      fontSize: 13,
+      color: 'var(--on-dark-muted)'
+    }
+  }, "Pol\xEDtica de Privacidade"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 13,
       color: 'var(--on-dark-muted)',
       fontStyle: 'italic'
     }
-  }, "Engenharia que respeita o cronograma da sua obra."))));
+  }, "Engenharia que respeita o cronograma da sua obra.")))));
 }
 function FootContact({
   icon,
