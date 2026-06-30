@@ -169,6 +169,7 @@ function Contact() {
         Empresa: form.empresa,
         'Tipo de projeto': form.tipo,
         Descrição: form.desc,
+        _replyto: form.email,
         _subject: `[BETABIM] Nova solicitação — ${form.nome || 'sem nome'}`,
         _captcha: 'false',
         _template: 'table'
@@ -305,13 +306,31 @@ function Contact() {
       });
     }
   }, "Enviar outra solicita\xE7\xE3o")) : /*#__PURE__*/React.createElement("form", {
+    action: "https://formsubmit.co/engcivilorlandojr@gmail.com",
+    method: "POST",
     onSubmit: submit,
     style: {
       display: 'flex',
       flexDirection: 'column',
       gap: 18
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "hidden",
+    name: "_subject",
+    value: "[BETABIM] Nova solicita\xE7\xE3o pelo site"
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "hidden",
+    name: "_template",
+    value: "table"
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "hidden",
+    name: "_captcha",
+    value: "false"
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "hidden",
+    name: "_replyto",
+    value: form.email
+  }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
@@ -322,6 +341,7 @@ function Contact() {
     label: "Nome completo"
   }, /*#__PURE__*/React.createElement("input", {
     required: true,
+    name: "Nome",
     style: inputStyle,
     value: form.nome,
     onChange: set('nome'),
@@ -333,6 +353,7 @@ function Contact() {
   }, /*#__PURE__*/React.createElement("input", {
     required: true,
     type: "email",
+    name: "E-mail",
     style: inputStyle,
     value: form.email,
     onChange: set('email'),
@@ -350,6 +371,7 @@ function Contact() {
     label: "Telefone com DDD"
   }, /*#__PURE__*/React.createElement("input", {
     required: true,
+    name: "Telefone",
     style: inputStyle,
     value: form.tel,
     onChange: set('tel'),
@@ -359,6 +381,7 @@ function Contact() {
   })), /*#__PURE__*/React.createElement(Field, {
     label: "Empresa"
   }, /*#__PURE__*/React.createElement("input", {
+    name: "Empresa",
     style: inputStyle,
     value: form.empresa,
     onChange: set('empresa'),
@@ -373,6 +396,7 @@ function Contact() {
     }
   }, /*#__PURE__*/React.createElement("select", {
     required: true,
+    name: "Tipo de projeto",
     style: {
       ...inputStyle,
       appearance: 'none',
@@ -404,6 +428,7 @@ function Contact() {
   })))), /*#__PURE__*/React.createElement(Field, {
     label: "Descri\xE7\xE3o breve do empreendimento"
   }, /*#__PURE__*/React.createElement("textarea", {
+    name: "Descri\xE7\xE3o",
     style: {
       ...inputStyle,
       resize: 'vertical',
